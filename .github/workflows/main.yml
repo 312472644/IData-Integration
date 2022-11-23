@@ -1,1 +1,41 @@
+# 工作流名称
+name: deploy git action
 
+# 触发事件列表
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # 工作名称
+  build:
+    runs-on: ubuntu-latest
+    # 步骤
+    steps:
+      # 步骤名
+      - name: Checkout
+        uses: actions/checkout@v3 # 使用market上的脚本包
+
+      # 依赖安装
+      - name: npm install
+        run: npm install
+
+      # 项目构建
+      - name: npm build
+        run: npm run build
+
+      # 项目构建后，推送至服务器
+      - name: Deploy
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        env:
+          WELCOME: 'ssh scp ssh pipelines'
+          LASTSSH: 'Doing something after copying'
+        with:
+          host: 119.91.19.53
+          user: 'Administrator'
+          pass: '19940605_Dafa'
+          port: 3389
+          connect_timeout: 10s
+          local: '../dist/*'
+          remote: /www/www.i-data.club
