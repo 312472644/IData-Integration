@@ -19,7 +19,6 @@
           <el-button type="primary" auto-insert-space class="btn-login" @click="login">登录</el-button>
         </el-form-item>
       </el-form>
-      <h3 style="text-align: center">git hooks</h3>
     </div>
   </div>
 </template>
