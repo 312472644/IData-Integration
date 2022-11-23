@@ -19,6 +19,7 @@
           <el-button type="primary" auto-insert-space class="btn-login" @click="login">登录</el-button>
         </el-form-item>
       </el-form>
+      <h3 style="text-align: center">git hooks</h3>
     </div>
   </div>
 </template>
@@ -34,19 +35,19 @@ const ruleFormRef = ref<FormInstance>();
 const isChecked = ref(false);
 const loginForm = reactive({
   userName: '',
-  password: '',
+  password: ''
 });
 
 const rules = reactive<FormRules>({
   userName: [{ required: true, message: '请输入账号', trigger: 'blur' }],
-  password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+  password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
 });
 
 const setCacheLoginInfo = () => {
   if (isChecked.value) {
     const loginInfo = {
       ...loginForm,
-      checked: isChecked.value,
+      checked: isChecked.value
     };
     localStorage.setItem('loginInfo', JSON.stringify(loginInfo));
   } else {
