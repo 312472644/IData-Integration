@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": false,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": ["element-plus/global"],
+    "skipLibCheck": true,
+    "paths": {
+      "@pages/*":["./src/pages/*"],
+      "@utils/*":["./src/utils/*"],
+      "@interface/*":["./src/interface/*"],
+      "@assets/*":["./src/assets/*"],
+      "@service/*":["./src/service/*"],
+      "@hooks/*":["./src/hooks/*"]
+    },
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
