@@ -33,9 +33,9 @@ jobs:
           LASTSSH: 'Doing something after copying'
         with:
           host: 119.91.19.53
-          user: 'Administrator'
-          pass: '19940605_Dafa'
-          port: 3389
+          user: root
+          pass: 19940605_Dafa
+          port: 22
           connect_timeout: 10s
           local: './dist/*'
-          remote: /www/www.i-data.club
+          remote: /www/wwwroot/www.i-data.club
